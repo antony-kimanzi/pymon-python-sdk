@@ -1,6 +1,12 @@
 # Changelog
 
 All notable changes to the PyMon Python SDK will be documented in this file.
+## [0.1.1] - 2024-05-25
+
+### Fixed
+- Fixed an issue where the default `PYMON_URL` would resolve to `None`, causing pings to fail.
+- Set the default API URL to `http://localhost:8080` for local development.
+
 
 ## [0.1.0] - 2024-05-24
 
