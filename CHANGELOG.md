@@ -2,12 +2,17 @@
 
 All notable changes to the PyMon Python SDK will be documented in this file.
 
+## [0.1.5] - 2026-11-10
+
+### Fixed
+- Fixed the pyproject.toml to use modern SPDX format for the license
+
+
 ## [0.1.4] - 2026-11-10
 
 ### Fixed
 - Set the decorator and client to return the check name for the purpose of the API URL
 - Fix init to accept dotenv variables
-- Fixed the pyproject.toml to use modern SPDX format for the license
 - Deleted the test-script.py
 
 
