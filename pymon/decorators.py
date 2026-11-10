@@ -27,12 +27,12 @@ def monitor(check_name: str, client: Optional[Client] = None):
 
                 # If iy succeeds, calculate time and send success ping
                 duration_ms = int((time.time() - start_time) * 1000)
-                _client.ping_success(duration_ms)
+                _client.ping_success(check_name, duration_ms)
                 return result
 
             except Exception as e:
                 # If it fails, report the failure, then re-raise the error
-                _client.report_failure(e)
+                _client.report_failure(check_name, e)
                 raise e
 
         return wrapper
@@ -59,13 +59,13 @@ def monitor_async(check_name: str, client: Optional[Client] = None):
 
                 # Send success ping
                 duration_ms = int((time.time() - start_time) * 1000)
-                _client.ping_success(duration_ms)
+                _client.ping_success(check_name, duration_ms)
 
                 return result
 
             except Exception as e:
                 # Report failure, then re-raise
-                _client.report_failure(e)
+                _client.report_failure(check_name, e)
                 raise e
 
         return wrapper
